@@ -1,0 +1,32 @@
+GIT CLONE is used to clone repositories onto your pc from the server
+git clone <url>
+
+GIT ADD  makes you choose the explicit files you want to commit
+git add <file name>
+
+COMMIT is used to set a stage in your code  
+git commit -m  "message"
+git commit -am "message" is used to commit all files 
+
+GIT STATUS used to check the current statues of my code 
+
+GIT PUSH is used to push changes to the  online version of github 
+
+GIT PULL is used to download the latest changes on github to your local repsitory they're opposites
+
+GIT RESET is used to revert to an erlier commit
+git reset --hard <commit hash>
+git reset --hard origin/master  /// this is used to reset your local repo to the one online 
+
+GIT LOG shows the entire log of the repository 
+
+GIT BRANCH shows  what  branch  youre currently on 
+
+GIT CHECKOUT -B is used to create a new  branch 
+git checkout -b <branch name>
+
+GIT CHECKOUT used to switch branches
+git checkout <branch name>
+
+GIT MERGE used to merge two branches together
+git merge <branch name>  usually when on  master  branch

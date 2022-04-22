@@ -1,0 +1,45 @@
+A String is an array of characters
+Instead of starting an array with 
+Int numbers [7] ;
+Numbers[0]= 1;
+Numbers [1]= 5;
+
+You can just put it this way;
+Int numbers[] = {1,5};
+
+~~ You can create your own data type in C
+Typedef struct                            (Defines a new datatype)
+{ 
+     string name;			(
+     string number;
+}
+Person;				(name of your new datatype)
+
+Eg. person people[1] ;
+       people[0].name = “david”;
+       people[0].number ='0443045905';
+
+       people[1].name = 'job';
+       people[1].number = '0877767776';
+       
+
+SORTING
+Bubble Sort : Compares two elements at a time
+Selection sort: Goes back and fort to compare numbers
+
+hEXADECIMAL SYSTEM all in base 16
+thus 16^0 16^1 
+jsut like our usual counting in base 
+thus 10 10^0 10^1
+0 1 2 3 4 5 6 7 8 9 A B C D E F 
+F = 15
+A = 10 
+B = 11
+0 = 0
+
+Since in base 16 = 16^0 = 1 , 16^1 = 16 ,16^2 = 32  
+FF = (16*15) + (1*15)
+oc = (16*0)+(1*12)
+
+
+Usually ude a do while loop for user input to keep prompting user if he makes a mistake 

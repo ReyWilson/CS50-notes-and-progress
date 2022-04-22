@@ -1,0 +1,49 @@
+-- USING SQLITE3
+SQLITE3 favorite.db;  -- creates a database for you 
+.mode csv;            -- selects which mode you want 
+.import FavoriteShows.csv favorite; -- imports csv file to database 
+.schema             -- shows structure of the database
+
+
+
+SELECT columns FROM tablename/database;
+SELECT title from favorite;
+
+SELECT DISTINCT(UPPER(title)) from favorite; -- Distinct is used to filter out duplicates
+
+SELECT COUNT(title) from favorite;  --shows you the total items in your db
+
+SELECT title FROM favorite LIMIT 10; --only ten results
+
+SELECT title FROM favorite WHERE title LIKE "office"; -- LIKE is able to tolerate both upper and lowercase
+
+SELECT title FROM favorite WHERE title LIKE "%office%"; -- % will display any title with office in it 
+
+DELETE FROM favorite WHERE title LIKE "friends";-- this deletes titles with friends 
+
+UPDATE favorite SET title = "the office" WHERE title LIKE "thevoffice";
+
+
+-- TWO TABLES
+SELECT title FROM shows WHERE genres LIKE "%comedy%";
+
+-- Here genre is a table on its own
+SELECT show_id FROM genres WHERE genre = "Comedy";
+
+-- Using Nested approach
+SELECT title FROM shows WHERE id IN (SELECT show_id FROM genres WHERE genre = "Comedy";
+) ;
+
+-- ORDER BY  used to order your list
+SELECT show_id FROM genres WHERE genre = "Comedy" ORDER BY show_id;
+
+--INSERT INTO appending values to the table
+INSERT INTO favorite(title) VALUES('yolo');
+INSERT INTO favorite(title,genres) VALUES("yolo","comedy");
+
+INSERT INTO shows (title) VALUES('Seinfield');
+
+-- AS is used to assign table aliases 
+SELECT COUNT(*) AS counter FROM favorite WHERE title LIKE "the office";
+
+-- INDEXING speeds up the time results are processed

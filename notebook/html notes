@@ -1,0 +1,18 @@
+TCP - Makes sure data is either fully delivered or not delivered
+DNS - Domain name System
+
+Validator.w3.org  for validating webpages
+
+action tag - helps with landing pages
+
+forms --- autocomplete = off , autofocus 
+
+select tag in form is used for the  dropdown menu  option
+
+datalist tag is used to create a list and autocompletes your options when filling them..remember you have to specify the list in the input tag and should correspomd with the datalist id 
+
+the > is used to select the direct child elements inside of a tag 
+
+Page responsiveness
+You can use the display flex and wrap or
+you can divide the div to columns using bootstrap's row and column feature, this divides the page to a total of 12 divisions the column number  can differ so long as it sums up to 12

@@ -1,0 +1,299 @@
+# FORMATTED STRINGS
+name = input("Name: ")
+print(f"Hello {name}")
+
+# Put input into datatype to specify the type of data
+
+def main():
+    meow(5)
+
+def meow(n):
+    for i in range(n):
+        print("meow")
+        
+main()       
+
+
+# LISTS can be modified , you can append to 
+name = ["Harry","Ginny","Ron"]
+print(name)
+name.append('Draco')
+
+# SETS contains only unique elements ,no element can appear twice
+s = set()
+s.add(2)    #Adds elements to set
+s.add(1)
+s.add(3)
+s.add(4)
+print(s)
+s.remove(3) #Removes elements from set
+print(s)
+print(f"This set has {len(s)} elements")
+
+#LOOPS 
+for i in (1,2,3,4,5):
+    print(i)
+for i in range(6):
+    print(i)
+
+name = ['Hary','re','tee']
+for n in name:
+    print(n)
+
+#DICTIONARIES
+
+houses = {"Harry":"Griffindor","Tee":"Swanlake","Ron":"ghetts"}    
+print(houses["Harry"])
+# Take the houses dictionary and print out Harry's value 
+
+houses["Tee"] = "mome"    #to change the value of a key 
+print(houses["Tee"])
+
+
+
+people = [
+    {"Name": "Harry","House": "Griffindor"},
+    {"Name" : "Ron" ,"House": "Slytherin"},
+    {"Name": "Emma" , "House": "Ravenclaw"}
+    ] 
+
+def f(person):
+    return person["House"]
+
+people.sort(key=f)          #Tells which function to sort 
+print(people)
+
+people.sort(key= lambda person:person["House"])  #This is the same as the function on top but instead of  declaring  the f function, lamda is used to  declare a  temporal function , in this case person that returns the person's house
+print(people) 
+
+
+
+#FUNCTIONS
+def square(x):
+    return x*x
+
+for i in range(10):
+    print(f"The square of {i} is {square(i)}")
+
+
+
+
+points = int(input('How many points did you get: '))
+if points < 2:
+    print("I scored less than you")
+elif points > 2:
+    print("You scored more than i did")
+else:
+    print("We scored ther same points")
+    
+
+option = input("Do you agree or disagree? ")
+if option == "y" or option == "Y":
+    print('Agreed')
+elif option == "n" or option == "N":
+    print('Disagree')
+else:
+    print('Wrong input')
+
+
+option = input("Do you agree or disagree? ")
+if option in ["y","Y","YES"]:
+    print('Agreed')
+elif option in ["n","oi","N"]:
+    print('Disagree')
+else:
+    print('Wrong input')
+
+for i in range(3):
+    print('meow')
+
+
+
+n = int(input('Whats your number: '))
+if (n % 2 == 0):
+    print('Your number is even')
+else:
+    print('Your number is odd')
+
+
+b = input('Send a number: ')
+if b in ['Y','YES','y']:
+    print('agreed')
+elif b in ['N','no','n']:
+    print('not agreed')
+else:
+    print('not found')
+
+
+# CALLING FUNCTIONS
+def main():
+    meow(4)
+
+def meow(n):
+    for i in range(n):
+        print('meow')
+
+main()
+
+def height():
+    while True:
+        he = int(input('What height: '))
+        if he > 0:
+            break
+    for i in range(he):
+        print('#')
+height()
+
+
+
+# Usually ude a do while loop for user input to keep 
+# prompting user if he makes a mistake
+# EG
+
+while True:
+    n = int(input('what height: '))
+    if n > 0:
+        break
+for i in range(n):
+    print('#')
+
+
+# TRY & EXCEPT FOR USER INPUTS prompts user to make change to input
+def main():
+    height = heit()
+    for i in range(height):
+        print('#')
+
+def heit():
+    while True:
+        try:
+            he = int(input('What height: '))
+            if he > 0:
+                break
+        except ValueError:
+            print('This is not an int')
+    return he
+
+main()
+
+
+def main():
+    height = heit()
+    for i in range(height):
+        print('#')
+
+def heit():
+    while True:
+        try:
+            take = int(input('Whats the height: '))
+            if take > 0:
+                break
+        except:
+            print('Please input an integer!')
+    return take 
+
+main()
+
+
+# if you dont want a new line you can use the end keyword
+for i in range(3):
+    print('#', end = "")
+
+
+# You cant concat a string and a float in python so to do 
+# so you have to use this syntax
+scores = [12,45,22]
+average = sum(scores)/len(scores)
+print(f'Average: {average}')
+
+
+scores = []
+for i in range(3):
+    total = sum(scores)
+    score = int(input('Input a score: '))
+    scores.append(score)
+print(scores)
+print(total)
+
+
+before = input('Before: ')
+print('After: ', end = "")
+for c in before:
+    print(c.upper(), end ="")
+
+before = input('Before: ')
+after = before.upper()
+print("After: ", after)
+
+
+# DICTIONARIES  they are used for associating keys and values
+people = {
+    "David": "055861743",
+    "Job": "0244068795"
+}
+name = input('Name: ')
+if name in people:
+    print('Number: {people}')
+
+
+
+# DECORATORS take a function as input and returns a modified version of that function as output
+def announce(f):
+    def wrapper():
+        print("About to run the function... ")
+        f()
+        print("Done with the function")
+    return wrapper
+
+@announce
+def hello():
+    print("We are using a wrapper to modify this")
+
+hello()
+   
+
+
+# CSV  Comma separated values
+import csv
+
+file = open('phonebook.csv','a')
+
+name = input('Name: ')
+number = int(input('Number:'))
+
+writer = csv.writer(file)
+writer.writerow([name, number])
+
+file.close()
+
+
+import csv
+
+with open('favorites.csv','r') as file:
+    reader = csv.reader(file)
+    next(reader)            #this skips the first line of file
+    for row in reader:
+        print(row[1])
+
+
+# EXCEPTION HANDLERS used to eliminate horrid pyhton feedback messages
+
+import sys                      #Library in python for the sys.exit function
+
+try:
+    x = int(input('Input: '))
+    y = int(input('Input: '))
+except ValueError:                  #Type the  error  feedback python  gives you in code
+    print('Wrong input')
+    sys.exit(1)                 #Used to exit the whole function  
+
+try:
+    result = x/y
+except ZeroDivisionError:
+    print('Error cannot divide by 0')
+    sys.exit(1)
+print(f"{x} divided by {y} is {result}")
+
+
+
+
